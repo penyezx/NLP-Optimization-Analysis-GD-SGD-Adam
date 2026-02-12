@@ -2,7 +2,7 @@
 
 This project evaluates the performance of different optimization algorithms (GD, SGD, and Adam) on a Turkish text classification task. It uses semantic embeddings to train a regression model that distinguishes between "good" and "bad" answers to specific questions.
 
-## 🚀 Project Overview
+## Project Overview
 
 The core objective is to analyze how different optimizers affect the training process of a single-layer regression model (and optionally an MLP) using Turkish language data.
 
