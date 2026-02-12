@@ -1,14 +1,24 @@
-# Truth Predictor: Optimization Benchmark (GD, SGD, Adam)
+# Turkish NLP: Optimization Algorithm Analysis
 
-Projenin amacı, verilen bir soru-cevap çiftinin doğruluğunu tahmin eden bir model eğitirken farklı 
-optimizasyon algoritmalarının (Gradient Descent, SGD, Adam) performanslarını karşılaştırmaktır.
+This project evaluates the performance of different optimization algorithms (GD, SGD, and Adam) on a Turkish text classification task. It uses semantic embeddings to train a regression model that distinguishes between "good" and "bad" answers to specific questions.
 
-## Özellikler
-- **Veri Seti:** LM Studio üzerinden `Turkish-Gemma-9B-T1` modeli ile üretilen 200 örnekli özgün veri seti.
-- **Embedding:** Metinleri vektöre çevirmek için `turkish-e5-large` modeli kullanılmıştır.
-- **Model:** Tek katmanlı, `tanh` aktivasyon fonksiyonlu PyTorch modeli.
-- **Görselleştirme:** t-SNE ile optimizasyon yörüngeleri ve Epoch/Time/Loss grafikleri.
+## 🚀 Project Overview
 
-## Sonuçlar
-- **Adam**, en hızlı yakınsayan yöntem olmuştur (~0.35 saniye).
-- **SGD**, Adam'a göre daha stabil bir ilerleme kaydetmiş ancak daha uzun sürede (~5 saniye) benzer doğruluğa ulaşmıştır.
+The core objective is to analyze how different optimizers affect the training process of a single-layer regression model (and optionally an MLP) using Turkish language data.
+
+- **Embedding Model:** `ytu-ce-cosmos/turkish-e5-large` (used to transform text into 1024-dimensional vectors).
+- **Classification Task:** Predicting whether an answer is correct (+1) or incorrect (-1) based on the question-answer pair.
+- **Optimizers Compared:** - Gradient Descent (GD)
+  - Stochastic Gradient Descent (SGD)
+  - Adam
+
+## 📊 Key Features
+
+### 1. Performance Comparison
+The project includes detailed visualizations of:
+- **Epoch vs. Loss/Accuracy:** How the model learns over iterations.
+- **Time vs. Loss/Accuracy:** Computation efficiency of each algorithm.
+- Comparison across 5 different initial weight sets to ensure robustness.
+
+### 2. Weight Trajectory Visualization (t-SNE)
+Using **t-SNE**, the high-dimensional weight vectors ($2d+1$) are reduced to 2D space to visualize the optimization paths. This helps in understanding how different optimizers navigate the loss landscape from various starting points.
